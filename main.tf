@@ -99,7 +99,6 @@ resource "aws_key_pair" "terraform_key" {
     command = <<-EOF
       echo '${tls_private_key.deploy_key.private_key_pem}' > ./'${var.generated_key_name}'.pem
       chmod 600 ./'${var.generated_key_name}'.pem
-      echo '${tls_private_key.deploy_key.public_key_openssh}' > ./'${var.generated_key_name}'.pub
     EOF
   }
 
